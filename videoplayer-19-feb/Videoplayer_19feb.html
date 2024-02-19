@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO PLAYER</title>
+    <style>
+      
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+          
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; 
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+       
+        .content {
+            padding-top: 6rem;
+            position: relative;
+            text-align: center;
+            color: black; 
+            z-index: 1; 
+        }
+        button{
+            font-weight: bold;
+            width: 7rem;
+            height: 4rem;
+            border:none;
+            background-color:white;
+            border-radius: 8px;
+            font-size: larger;
+            cursor: pointer;
+        }
+        #video1{
+            width: 30rem;
+            height: 30rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+       
+        <video id="bg" autoplay controls muted>
+            <source src="vid.mp4" type="video/mp4">
+           
+        </video>
+    </div>
+
+  
+    <div class="content">
+       
+        
+        <video id="video1" controls autoplay src="vedd.mp4"></video>
+        <div>
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+        <!-- <button onclick="stop()">Stop</button> -->
+    </div>
+    </div>
+
+    <script>
+        var video1 = document.getElementById('video1');
+         var bg=document.getElementById('bg')
+        function play() {
+            video1.play();
+            bg.pause()
+        }
+
+        function pause() {
+            video1.pause();
+            bg.play()
+        }
+        // function stop() {
+        //     video1.currentTime = 0;
+        //     video1.pause();
+        //     bg.stop()
+        // }
+    </script>
+</body>
+
+</html>
