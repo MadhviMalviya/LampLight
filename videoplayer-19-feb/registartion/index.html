@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background:lightsteelblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            box-shadow: 3px 3px 8px rgba(0,0,0,.5);
+            max-width: 600px;
+            width: 100%;
+            background: whitesmoke;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-box input {
+            height: 40px;
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .col {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #form-header {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color:rgb(85, 107, 135);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #form input[type="submit"] {
+            background-color:rgb(133, 155, 183);
+            border: none;
+            
+            color:white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+        }
+
+        #form input[type="submit"]:hover {
+            background-color:rgb(57, 55, 55);
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div id="form-header">Registration Form</div>
+        <form id="form">
+            <div class="input-box">
+                <label for="first_name">First name</label>
+                <input type="text" id="first_name" placeholder="Enter your first name">
+            </div>
+            <div class="input-box">
+                <label for="last_name">Last name</label>
+                <input type="text" id="last_name" placeholder="Enter your last name">
+            </div>
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="col">
+                <div class="input-box">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="input-box">
+                    <label for="dob">DOB</label>
+                    <input type="date" id="dob">
+                </div>
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <div class="input-box">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
