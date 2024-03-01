@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+
+    <style>
+        body {
+            background-image: url(bgg.jpg);
+            background-size: cover;
+            display: flex;
+            margin: 0;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-direction: column;
+            font-size: larger;
+        }
+
+        .box {
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            ;
+            width: 140px;
+            height: 160px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background-color: whitesmoke;
+            transform: perspective(100px) rotateX(30deg);
+        }
+
+        .box:hover {
+            box-shadow: 0 0 50px 20px yellow;
+            background-color: yellow;
+            z-index: 1;
+            box-shadow: rgb(241, 241, 58) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(226, 237, 5, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(192, 187, 56, 0.09) 0px 4px 2px, rgba(222, 225, 165, 0.09) 0px 8px 4px, rgba(228, 221, 126, 0.422) 0px 16px 8px, rgba(245, 242, 162, 0.403) 0px 32px 16px;
+
+        }
+
+        .base {
+            height: 1rem;
+            width: 15rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(143, 141, 141, 1) 0%, rgba(158, 153, 153, 1) 12%, rgba(151, 151, 158, 1) 19%, rgba(152, 151, 158, 1) 35%, rgba(148, 148, 156, 1) 52%, rgba(161, 161, 170, 1) 60%, rgba(119, 119, 123, 1) 100%, rgba(73, 71, 71, 0.4223740521599265) 100%);
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            margin-top: 2rem;
+            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+            cursor: pointer;
+            border:2px solid;
+            border-radius: 25px;
+            height: 3rem;
+            width: 6rem;
+            background-color: whitesmoke;
+            
+        }
+
+        .off {
+            
+            border-radius: 25px;
+            height: 3rem;
+            width: 3rem;
+            background-color: black;
+            border: 1px solid;
+        }
+
+
+
+        .stick {
+            width: 10px;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(67, 67, 71, 1) 0%, rgba(100, 100, 102, 1) 3%, rgba(94, 93, 99, 1) 6%, rgba(109, 109, 118, 1) 19%, rgba(125, 125, 129, 1) 26%, rgba(227, 218, 218, 0.4223740521599265) 100%);
+            height: 14rem;
+        }
+
+        /* .light {
+            background-color: rgb(250, 234, 1);
+            box-shadow: 0px 0px 10px 10px yellow;
+            z-index: 1;
+
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="stick"></div>
+    <div class="base"></div>
+
+    <div class="btn" onclick="movefn()">
+        <div class="off"></div>
+    </div>
+
+    <h2>Lamp Light</h2>
+</body>
+
+<script>
+
+    let isMoved = false;
+
+    function movefn() {
+        const offf = document.querySelector('.off');
+        const lamp = document.querySelector('.box');
+
+        if (!isMoved) {
+            lamp.style.backgroundColor = ' yellow';
+            lamp.style.boxShadow = 'rgb(241, 241, 58) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(226, 237, 5, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(192, 187, 56, 0.09) 0px 4px 2px, rgba(222, 225, 165, 0.09) 0px 8px 4px, rgba(228, 221, 126, 0.422) 0px 16px 8px, rgba(245, 242, 162, 0.403) 0px 32px 16px';
+            lamp.style.zIndex = '1'
+            offf.style.transform = 'translate(50px)';
+            offf.style.transition = 'transform .3s';
+        } else {
+            offf.style.transform = 'translate(0)';
+            lamp.style.backgroundColor = 'whiteSmoke';
+            lamp.style.boxShadow = ' rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px';
+
+        }
+        isMoved = !isMoved
+    }
+
+
+</script>
+
+
+</html>
